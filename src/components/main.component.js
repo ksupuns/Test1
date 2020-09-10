@@ -37,6 +37,9 @@ export default class main extends Component{
         this.setState({
             p_tp:e.target.value
         })
+    }
+    onsubmit(e){
+        e.preventDefault();
     }        
 
     render() {
@@ -71,7 +74,12 @@ export default class main extends Component{
                         <div className="col-md-5"><input type="text" value={this.p_tp} onChange={this.onchange_ptp}></input></div>
                         <div className="col-md-2"></div>
                     </div>                                                            
-                
+                    <div className="row">
+                        <div className="col-md-4"></div>
+                        <div className="col-md-1">TP</div>
+                        <div className="col-md-5"><input type="submit" value={this.p_tp} onChange={this.onchange_ptp}></input></div>
+                        <div className="col-md-2"></div>
+                    </div>                 
             </div>
         )
     }
