@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default class main extends Component{
     constructor(props){
@@ -40,6 +42,18 @@ export default class main extends Component{
     }
     onsubmit(e){
         e.preventDefault();
+
+        let submitobject={
+            pid:this.state.p_id,
+            pname:this.state.p_name,
+            pnic:this.state.p_nic,
+            ptp:this.state.p_tp
+        }
+
+        Axios.get('http://localhost:4000/add',submitobject)
+        .then(response=>{
+            toast(response.data);
+        });
     }        
 
     render() {
@@ -77,7 +91,7 @@ export default class main extends Component{
                     <div className="row">
                         <div className="col-md-4"></div>
                         <div className="col-md-1">TP</div>
-                        <div className="col-md-5"><input type="submit" value={this.p_tp} onChange={this.onchange_ptp}></input></div>
+                        <div className="col-md-5"><input type="submit" value={this.p_tp} onClick={this.onsubmit}></input></div>
                         <div className="col-md-2"></div>
                     </div>                 
             </div>
