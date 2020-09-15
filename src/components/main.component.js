@@ -24,21 +24,25 @@ export default class main extends Component{
         this.setState({
             p_id:e.target.value
         });
+        console.log(this.state.p_id);
     }
     onchange_pname(e){
         this.setState({
             p_name:e.target.value
-        })
+        });
+        console.log(this.state.p_name);        
     }
     onchange_pnic(e){
         this.setState({
             p_nic:e.target.value
-        })
+        });
+        console.log(this.state.p_nic);        
     }
     onchange_ptp(e){
         this.setState({
             p_tp:e.target.value
-        })
+        });
+        console.log(this.state.p_tp);        
     }
     onsubmit(e){
         e.preventDefault();
