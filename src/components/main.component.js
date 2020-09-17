@@ -11,6 +11,9 @@ export default class main extends Component{
         this.onchange_pnic = this.onchange_pnic.bind(this);
         this.onchange_ptp = this.onchange_ptp.bind(this);
         this.onsubmit = this.onsubmit.bind(this);
+        this.onSubmit_click=this.onSubmit_click.bind(this);
+        this.nextPath=this.nextPath.bind(this);
+
 
         this.state={
             p_id:'',
@@ -68,6 +71,25 @@ export default class main extends Component{
         });
     }        
 
+    nextPath(path) 
+    {
+        // alert(col1);
+        // alert(col2);
+        /////////////Session Exapmle
+        //localStorage.setItem('selectednumber', JSON.stringify(col1));
+        //localStorage.setItem('selectedpolicynumber', JSON.stringify(col2));
+        this.props.history.push(path);
+        window.location.reload(false);
+    }     
+    
+    onSubmit_click(e)
+    {
+        e.preventDefault();
+        //   console.log(this.state.enteredVehicleNumber);
+        this.nextPath('/view/');
+    }
+
+
     render() {
         return (
             <div className="container">
@@ -105,7 +127,13 @@ export default class main extends Component{
                         <div className="col-md-1">TP</div>
                         <div className="col-md-5"><input type="submit" value = "Submit" onClick={this.onsubmit}></input></div>
                         <div className="col-md-2"></div>
-                    </div>                 
+                    </div>     
+                    <div className="row">
+                        <div className="col-md-4"></div>
+                        <div className="col-md-1">TP</div>
+                        <div className="col-md-5"><input type="submit" value = "View" onClick={this.onSubmit_click}></input></div>
+                        <div className="col-md-2"></div>
+                    </div>                                  
             </div>
         )
     }
