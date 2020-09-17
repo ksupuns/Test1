@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import main from "./components/main.component";
 import view from "./components/view.component";
+import gridview from "./components/grid.component";
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
     <Router>
       <Route path="/" exact component ={main}></Route>
       <Route path="/view" exact component ={view}></Route>
+      <Route path="/gridview" exact component ={gridview}></Route>
 
     </Router>
   );

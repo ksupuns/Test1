@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import $ from 'jquery';
 
+// this is use for react coding
 export default class main extends Component{
     constructor(props){
         super(props);

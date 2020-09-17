@@ -13,7 +13,7 @@ export default class main extends Component{
         this.onsubmit = this.onsubmit.bind(this);
         this.onSubmit_click=this.onSubmit_click.bind(this);
         this.nextPath=this.nextPath.bind(this);
-
+        this.onSubmitgrid_click=this.onSubmitgrid_click.bind(this);
 
         this.state={
             p_id:'',
@@ -89,6 +89,11 @@ export default class main extends Component{
         this.nextPath('/view/');
     }
 
+    onSubmitgrid_click(e){
+        e.preventDefault();
+        this.nextPath('/gridview/');
+    }
+
 
     render() {
         return (
@@ -133,7 +138,13 @@ export default class main extends Component{
                         <div className="col-md-1">TP</div>
                         <div className="col-md-5"><input type="submit" value = "View" onClick={this.onSubmit_click}></input></div>
                         <div className="col-md-2"></div>
-                    </div>                                  
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4"></div>
+                        <div className="col-md-1">TP</div>
+                        <div className="col-md-5"><input type="submit" value = "View" onClick={this.onSubmitgrid_click}></input></div>
+                        <div className="col-md-2"></div>
+                    </div>                      
             </div>
         )
     }
